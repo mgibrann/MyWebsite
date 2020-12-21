@@ -1,11 +1,14 @@
 .App {
   display: flex;
-  min-height: 670px;
+  min-height: 100%;
+  flex-direction: column;
+  min-height: 700px;
   justify-content: center;
   align-items: center;
   background-color: #282c34;
 }
+
 .text {
   color: white;
-  font-size: 24px;
+  font-size: 30px;
 }
