@@ -9,7 +9,7 @@ const App = () => {
           <li>Contact</li>
         </ul>
       </header>
-      <div>HI I'm Web Developer, Mobile App Developer</div>
+      <div></div>
       <Text>Coming Soon...</Text>
     </Container>
   );
