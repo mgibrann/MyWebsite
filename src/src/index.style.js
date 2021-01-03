@@ -12,5 +12,6 @@ export const Container = styled.div`
 export const Text = styled.text`
   color: white;
   font-size: 30px;
-  font-family: code;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 `;
