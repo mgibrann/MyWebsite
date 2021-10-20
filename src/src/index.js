@@ -1,11 +1,5 @@
-import { Text, Container } from "./index.style";
-
 const App = () => {
-  return (
-    <Container>
-      <Text>Coming Soon...</Text>
-    </Container>
-  );
+  return <div>Coming Soon...</div>;
 };
 
 export default App;
