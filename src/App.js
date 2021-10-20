@@ -1,18 +1,24 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Header from "./components/UI/Header";
+import React from "react";
 
-import Home from "./pages/Home";
-import Blog from "./pages/Blog";
-import Project from "./pages/Project";
-import About from "./pages/About";
-import Footer from "./components/UI/Footer";
+import Header from "./components/Layout/Header";
+import Footer from "./components/Layout/Footer";
+import Loading from "./components/UI/Loading";
+
+const Home = React.lazy(() => import("./pages/Home"));
+const Blog = React.lazy(() => import("./pages/Blog"));
+const Project = React.lazy(() => import("./pages/Project"));
+const About = React.lazy(() => import("./pages/About"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Header />
-      <Main />
-      <Footer />
+      <React.Suspense fallback={Loading}>
+        <Header />
+        <Main />
+        <Footer />
+      </React.Suspense>
     </BrowserRouter>
   );
 };
@@ -31,6 +37,9 @@ const Main = () => {
       </Route>
       <Route path="/about">
         <About />
+      </Route>
+      <Route path="*">
+        <NotFound />
       </Route>
     </Switch>
   );
