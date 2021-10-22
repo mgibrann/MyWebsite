@@ -1,10 +1,6 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import React from "react";
 
-import Header from "./components/Layout/Header";
-import Footer from "./components/Layout/Footer";
-// import Loading from "./components/UI/Loading";
-
 import Lottie from "react-lottie";
 import { LoadingSpinner } from "./assets";
 import Layout from "./components/Layout/Layout";

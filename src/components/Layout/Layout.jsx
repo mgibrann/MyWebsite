@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -5,7 +6,7 @@ const Layout = (props) => {
   return (
     <>
       <Header />
-      <main className="">{props.children}</main>
+      {props.children}
       <Footer />
     </>
   );
