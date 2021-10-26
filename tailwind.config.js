@@ -18,7 +18,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      grayscale: ["hover", "focus", "active"],
+    },
   },
   plugins: [],
 };

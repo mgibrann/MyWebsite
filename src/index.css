@@ -9,26 +9,18 @@ body {
 }
 
 @layer components {
-  .text-typewritter {
-    @apply text-light-grey underline text-3xl font-extrabold text-center;
-  }
-  .Typewriter {
-    @apply justify-center items-center flex;
+  .padding {
+    @apply px-2 md:px-10 lg:px-20;
   }
   .active-nav {
     @apply text-light-blue;
   }
-  .animation-link,
-  .link-project {
+  .animation-link {
     position: relative;
     padding-bottom: 5px;
   }
-  .link-project {
-    width: 60%;
-    letter-spacing: 0.4em;
-  }
-  .animation-link:after,
-  .link-project:after {
+
+  .animation-link:after {
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
     content: "";
@@ -39,20 +31,7 @@ body {
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
   }
-
-  .link-project:after {
-    width: 20%;
-    left: 0;
-    height: 2px;
-    background-color: #555555;
-  }
-
   .animation-link:hover:after {
-    width: 100%;
-    left: 0;
-  }
-
-  .link-project:hover:after {
     width: 100%;
     left: 0;
   }

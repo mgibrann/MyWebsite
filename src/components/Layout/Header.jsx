@@ -5,13 +5,13 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50">
-      <div className="bg-light-white p-5 bg-opacity-60 backdrop-filter backdrop-blur-lg flex py-3 px-20 justify-between items-center">
-        <p className=" text-light-blue text-4xl font-bold">
+      <div className="bg-light-white bg-opacity-60 backdrop-filter backdrop-blur-lg flex py-3 justify-between items-center padding">
+        <p className="text-light-blue text-xl w-3/6 md:w-4/6 md:text-2xl lg:text-4xl font-bold">
           <NavLink to="/" className="animation-link" activeClassName={active}>
             gib
           </NavLink>
         </p>
-        <nav className="flex text-lg font-medium w-1/4 justify-around text-light-grey">
+        <nav className="flex text-sm w-3/6 md:w-2/6 md:text-base lg:text-xl font-medium justify-between text-light-grey">
           <NavLink
             to="/blog"
             className="animation-link"
