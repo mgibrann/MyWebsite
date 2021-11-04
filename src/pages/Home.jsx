@@ -1,6 +1,5 @@
-import Lottie from "react-lottie";
 import Typewriter from "typewriter-effect";
-import { Coding } from "../assets";
+import AnimationLottie from "../components/UI/AnimationLottie";
 
 const Home = () => {
   const text1 = `<span>Web Developer</span>`;
@@ -8,15 +7,6 @@ const Home = () => {
   const text3 = `<span>Student</span>`;
   const classTypeWritter =
     "text-light-grey text-2xl md:text-3xl lg:text-4xl font-medium";
-
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: Coding,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
 
   return (
     <main className="flex flex-grow flex-col-reverse md:flex-row justify-around md:justify-between items-center padding">
@@ -46,7 +36,7 @@ const Home = () => {
         />
       </div>
       <div className="w-full md:w-3/5">
-        <Lottie options={defaultOptions} height={"80%"} width={"80%"} />
+        <AnimationLottie type="coding" width="80%" height="75%" />
       </div>
     </main>
   );

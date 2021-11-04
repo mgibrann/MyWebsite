@@ -1,10 +1,8 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import React, { useEffect, Suspense, useState } from "react";
 
-import Lottie from "react-lottie";
-import { LoadingSpinner } from "./assets";
 import Layout from "./components/Layout/Layout";
-import useWindowDimensions from "./hooks/useWindowDimensions";
+import AnimationLottie from "./components/UI/AnimationLottie";
 
 const Home = React.lazy(() => import("./pages/Home"));
 const Blog = React.lazy(() => import("./pages/Blog"));
@@ -12,19 +10,10 @@ const Project = React.lazy(() => import("./pages/Project"));
 const About = React.lazy(() => import("./pages/About"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 
-const defaultOptions = {
-  loop: true,
-  autoplay: true,
-  animationData: LoadingSpinner,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice",
-  },
-};
-
 const Loading = () => {
   return (
     <div className="flex flex-grow items-center justify-center">
-      <Lottie options={defaultOptions} width="30%" height="30%" />
+      <AnimationLottie width="30%" height="30%" type="loading" />
     </div>
   );
 };
@@ -32,7 +21,6 @@ const Loading = () => {
 const App = () => {
   const [isLoading, setIsloading] = useState(true);
   useEffect(() => {
-    console.log("haloo");
     setTimeout(() => {
       setIsloading((prev) => !prev);
     }, 3000);
