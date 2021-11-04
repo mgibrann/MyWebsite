@@ -7,7 +7,7 @@ const Home = () => {
   const text2 = `<span>Mobile Developer</span>`;
   const text3 = `<span>Student</span>`;
   const classTypeWritter =
-    "text-light-grey text-xl md:text-3xl lg:text-4xl font-medium";
+    "text-light-grey text-2xl md:text-3xl lg:text-4xl font-medium";
 
   const defaultOptions = {
     loop: true,
@@ -22,7 +22,7 @@ const Home = () => {
     <main className="flex flex-grow flex-col-reverse md:flex-row justify-around md:justify-between items-center padding">
       <div className="w-full text-center md:w-2/5 md:text-left">
         <h1 className="text-light-blue text-3xl md:text-4xl lg:text-6xl font-bold py-0 md:py-5">
-          Gibran
+          Hi, I'm Gibran
         </h1>
         <Typewriter
           onInit={(typewriter) => {

@@ -12,9 +12,9 @@ const NotFound = () => {
   };
 
   return (
-    <div>
-      <Lottie options={defaultOptions} height={"70%"} width={"70%"} />
-    </div>
+    <main className="m-auto padding pb-5 md:pb-0 md:h-9/12 md:w-10/12">
+      <Lottie options={defaultOptions} />
+    </main>
   );
 };
 

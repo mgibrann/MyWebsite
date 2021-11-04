@@ -10,7 +10,7 @@ body {
 
 @layer components {
   .padding {
-    @apply px-2 md:px-10 lg:px-20;
+    @apply px-4 md:px-10 lg:px-20;
   }
   .active-nav {
     @apply text-light-blue;
@@ -34,5 +34,18 @@ body {
   .animation-link:hover:after {
     width: 100%;
     left: 0;
+  }
+
+  .link-project {
+    text-decoration: none;
+    background-image: linear-gradient(#7579e7, #7579e7);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 0% 4px;
+    transition: background-size 500ms ease-in-out;
+  }
+
+  .link-project:hover {
+    background-size: 100% 4px;
   }
 }

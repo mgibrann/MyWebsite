@@ -1,8 +1,8 @@
 const Blog = () => {
   return (
-    <div className="text-light-blue text-4xl text-center font-bold">
+    <main className="flex flex-grow justify-center items-center text-light-blue text-4xl  font-bold padding">
       Coming Soon
-    </div>
+    </main>
   );
 };
 

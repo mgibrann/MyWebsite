@@ -1,9 +1,10 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import React from "react";
+import React, { useEffect, Suspense, useState } from "react";
 
 import Lottie from "react-lottie";
 import { LoadingSpinner } from "./assets";
 import Layout from "./components/Layout/Layout";
+import useWindowDimensions from "./hooks/useWindowDimensions";
 
 const Home = React.lazy(() => import("./pages/Home"));
 const Blog = React.lazy(() => import("./pages/Blog"));
@@ -20,20 +21,33 @@ const defaultOptions = {
   },
 };
 
+const Loading = () => {
+  return (
+    <div className="flex flex-grow items-center justify-center">
+      <Lottie options={defaultOptions} width="30%" height="30%" />
+    </div>
+  );
+};
+
 const App = () => {
+  const [isLoading, setIsloading] = useState(true);
+  useEffect(() => {
+    console.log("haloo");
+    setTimeout(() => {
+      setIsloading((prev) => !prev);
+    }, 3000);
+  }, []);
   return (
     <BrowserRouter>
-      <React.Suspense
-        fallback={
-          <div className="flex items-center justify-center min-h-screen">
-            <Lottie options={defaultOptions} height={"30%"} width={"30%"} />
-          </div>
-        }
-      >
+      {isLoading ? (
+        <Loading />
+      ) : (
         <Layout>
-          <Main />
+          <Suspense fallback={<Loading />}>
+            <Main />
+          </Suspense>
         </Layout>
-      </React.Suspense>
+      )}
     </BrowserRouter>
   );
 };
