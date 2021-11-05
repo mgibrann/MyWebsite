@@ -7,7 +7,7 @@ const CardProject = ({ id, data }) => {
   const layout = `flex flex-col md:flex-row ${
     isEven ? "" : "md:flex-row-reverse"
   } items-center pb-16`;
-  const image = `w-full md:w-5/12 flex z-0 justify-center transform md:hover:scale-125 transition duration-700 md:p${
+  const image = `w-full md:w-5/12 flex z-20 justify-center transform md:hover:scale-125 transition duration-700 md:p${
     isEven ? "r" : "l"
   }-3`;
   const color = isHover ? "grayscale-0" : "grayscale";

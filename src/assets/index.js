@@ -7,12 +7,14 @@ import JavaScript from "./javascript.svg";
 import TypeScript from "./typescript.svg";
 import Tailwind from "./tailwind.svg";
 import Hamburger from "./hamburger_menu.json";
+import Photo from "./photo.png";
 
 export {
   LoadingSpinner,
   PageNotFound,
   Coding,
   Hamburger,
+  Photo,
   ReactIcon,
   Tailwind,
   Github,

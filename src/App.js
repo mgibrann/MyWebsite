@@ -47,7 +47,7 @@ const Main = () => {
         <Home />
       </Route>
       <Route path="/blog">
-        <Blog />
+        <NotFound />
       </Route>
       <Route path="/project">
         <Project />
