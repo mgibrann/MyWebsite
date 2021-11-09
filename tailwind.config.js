@@ -20,6 +20,7 @@ module.exports = {
   variants: {
     extend: {
       grayscale: ["hover", "focus", "active"],
+      zIndex: ["hover"],
     },
   },
   plugins: [],
