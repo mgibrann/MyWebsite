@@ -1,7 +1,25 @@
-import { Photo } from "../assets";
 import CardJourney from "../components/UI/CardJourney";
+import { Photo, JavaScript, Github, Tailwind, ReactIcon } from "../assets";
 
 const About = () => {
+  const SKILLS = [
+    {
+      id: "Javascript",
+      img: JavaScript,
+    },
+    {
+      id: "React",
+      img: ReactIcon,
+    },
+    {
+      id: "Tailwind",
+      img: Tailwind,
+    },
+    {
+      id: "Github",
+      img: Github,
+    },
+  ];
   const JOURNEYS = [
     {
       date: "Jan 2021 - Apr 2021",
@@ -56,17 +74,18 @@ const About = () => {
       file: "https://drive.google.com/file/d/1l_uhI8g7YUuMx2Ar08aq7Uzhi7mD0-uC/view?usp=sharing",
     },
   ];
+
   return (
     <main className="flex-grow padding">
       <section className="pt-4 pb-4">
-        <p className="pb-2 text-2xl md:text-6xl text-light-blue font-bold text-center border-b border-gray-300">
+        <p className="pb-2 text-2xl md:text-5xl text-light-blue font-bold text-center border-b border-gray-300">
           About Me
         </p>
         <div className="flex flex-col items-center pt-4">
           <img
             src={Photo}
             alt="gibran"
-            className="h-26 w-24 bg-light-blue rounded-full shadow-sm transform duration-700 hover:scale-150 hover:shadow-2xl cursor-pointer hover:z-40"
+            className="h-25 w-24 bg-light-blue rounded-full shadow-sm transform duration-700 hover:scale-150 hover:shadow-2xl cursor-pointer hover:z-40"
           />
           <p className="text-light-grey font-semibold mt-2 mb-5 transform duration-300 hover:text-light-blue">
             Muhamad Taopik Gibran
@@ -79,8 +98,23 @@ const About = () => {
           </p>
         </div>
       </section>
+      <section className="pt-4 pb-4 ">
+        <p className="pb-3 text-2xl md:text-5xl text-light-blue font-bold text-center border-b border-gray-300">
+          Skills
+        </p>
+        <div className="flex justify-evenly pt-5">
+          {SKILLS.map((skill) => (
+            <span className="flex flex-col items-center text-light-grey font-medium transform duration-500 hover:-translate-y-7">
+              <span className="h-10 w-10">
+                <img src={skill.img} alt="react" />
+              </span>
+              {skill.id}
+            </span>
+          ))}
+        </div>
+      </section>
       <section className="pt-4 pb-4">
-        <p className="pb-3 text-2xl md:text-6xl text-light-blue font-bold text-center border-b border-gray-300">
+        <p className="pb-3 text-2xl md:text-5xl text-light-blue font-bold text-center border-b border-gray-300">
           Journey
         </p>
         {JOURNEYS.map((journey, index) => (
@@ -93,7 +127,7 @@ const About = () => {
         ))}
       </section>
       <section className="pt-4 pb-4">
-        <p className="pb-3 text-2xl md:text-6xl text-light-blue font-bold text-center border-b border-gray-300">
+        <p className="pb-3 text-2xl md:text-5xl text-light-blue font-bold text-center border-b border-gray-300">
           Certificates
         </p>
         {CERTIFICATES.map((certif, index) => (
@@ -110,17 +144,6 @@ const About = () => {
             </p>
           </div>
         ))}
-      </section>
-      <section className="pt-4 pb-4 ">
-        <p className="pb-3 text-2xl md:text-6xl text-light-blue font-bold text-center border-b border-gray-300">
-          Skills
-        </p>
-        <div className="flex justify-center">
-          <span className="flex flex-col items-center">
-            <span>Logo</span>
-            JavaScript
-          </span>
-        </div>
       </section>
     </main>
   );
