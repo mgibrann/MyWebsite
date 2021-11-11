@@ -37,7 +37,7 @@ const Projects = () => {
 
   return (
     <main className="flex flex-col flex-grow padding">
-      <h1 className="text-2xl md:text-5xl text-light-blue font-bold text-center pt-4 pb-8">
+      <h1 className="text-2xl md:text-2xl lg:text-4xl text-light-blue font-bold text-center pt-4 pb-8">
         Projects
       </h1>
       {allProject.map((item, index) => (

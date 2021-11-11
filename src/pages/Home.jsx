@@ -31,12 +31,12 @@ const Home = () => {
   const text2 = `<span>Mobile Developer</span>`;
   const text3 = `<span>Student</span>`;
   const classTypeWritter =
-    "text-light-grey text-2xl md:text-3xl lg:text-4xl font-medium";
+    "text-light-grey text-lg md:text-xl lg:text-3xl font-medium";
 
   return (
     <main className="flex flex-grow flex-col-reverse justify-end md:flex-row md:justify-between items-center padding">
       <div className="w-full text-center md:w-2/5 md:text-left py-5 md:py-0">
-        <h1 className="text-light-blue text-3xl md:text-4xl lg:text-6xl font-bold py-0 md:py-5">
+        <h1 className="text-light-blue text-xl md:text-3xl lg:text-5xl font-bold py-0 md:py-5">
           Hi, I'm Gibran
         </h1>
         <Typewriter
@@ -65,7 +65,7 @@ const Home = () => {
               <img
                 src={contact.img}
                 alt={contact.id}
-                className="h-8 w-8 md:h-12 md:w-12"
+                className="h-7 w-7 md:h-10 md:w-10 lg:h-12 lg:w-12 transform duration-500 hover:-translate-y-5"
               />
             </button>
           ))}
@@ -74,8 +74,8 @@ const Home = () => {
       <div className="w-full md:w-3/5 py-5 md:py-0">
         <AnimationLottie
           type="coding"
-          width={width <= 768 ? "70%" : "80%"}
-          height={width <= 768 ? "70%" : "75%"}
+          width={width <= 768 ? "60%" : "65%"}
+          height={width <= 768 ? "60%" : "65%"}
         />
       </div>
     </main>

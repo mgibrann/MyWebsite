@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const Header = (props) => {
-  const active = "active-nav";
   const { width } = useWindowDimensions();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,7 +13,6 @@ const Header = (props) => {
       <NavLink
         to="/blog"
         className="animation-link"
-        activeClassName={active}
         onClick={closeNav.bind(null, props.type)}
       >
         Blog
@@ -22,7 +20,6 @@ const Header = (props) => {
       <NavLink
         to="/project"
         className="animation-link"
-        activeClassName={active}
         onClick={closeNav.bind(null, props.type)}
       >
         Project
@@ -30,7 +27,6 @@ const Header = (props) => {
       <NavLink
         to="/about"
         className="animation-link"
-        activeClassName={active}
         onClick={closeNav.bind(null, props.type)}
       >
         About
@@ -74,11 +70,10 @@ const Header = (props) => {
 
   const Nav = (props) => (
     <nav className="bg-light-white bg-opacity-60 backdrop-filter backdrop-blur-lg flex py-3 justify-between items-center padding">
-      <p className="text-light-blue text-xl w-3/6 md:w-4/6 md:text-2xl lg:text-4xl font-bold">
+      <p className="text-light-blue text-xl w-3/6 md:w-4/6 md:text-2xl lg:text-3xl font-bold">
         <NavLink
           to="/"
           className="animation-link"
-          activeClassName={active}
           onClick={() => setIsOpen(false)}
         >
           gib
@@ -103,7 +98,7 @@ const Header = (props) => {
 
   const Desktop = () => (
     <Nav>
-      <div className="flex w-2/6 text-base lg:text-xl font-medium justify-between text-light-grey">
+      <div className="flex w-2/6 text-base lg:text-lg font-medium justify-between text-light-grey">
         <Navigation />
       </div>
     </Nav>

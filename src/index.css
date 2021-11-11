@@ -12,7 +12,7 @@ body {
   .padding {
     @apply px-4 md:px-10 lg:px-20;
   }
-  .active-nav {
+  .active {
     @apply text-light-blue;
   }
   .animation-link {

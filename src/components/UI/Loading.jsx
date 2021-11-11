@@ -1,19 +1,12 @@
-import Lottie from "react-lottie";
-import { LoadingSpinner } from "../../assets";
+import useDimension from "../../hooks/useWindowDimensions";
+import AnimationLottie from "./AnimationLottie";
 
 const Loading = () => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: LoadingSpinner,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
+  const { width } = useDimension();
+  const size = width <= 768 ? "25%" : "15%";
   return (
-    <div className="flex items-center justify-center">
-      <Lottie options={defaultOptions} height={"30%"} width={"30%"} />
+    <div className="flex flex-grow items-center justify-center">
+      <AnimationLottie type="loading" height={size} width={size} />
     </div>
   );
 };
