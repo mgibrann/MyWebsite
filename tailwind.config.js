@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ["./src/**/**/*.jsx"],
+  purge: ["./src/**/**/**/*.jsx", "./public/index.html", "./src/index.css"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -22,7 +22,7 @@ module.exports = {
   },
   variants: {
     extend: {
-      grayscale: ["hover", "focus", "active"],
+      grayscale: ["hover"],
       zIndex: ["hover"],
     },
   },

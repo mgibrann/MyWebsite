@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import Fade from "../../utils/Fade";
 
 export default function CardProject({ id, data }) {
@@ -9,8 +8,8 @@ export default function CardProject({ id, data }) {
     isEven ? "" : "md:flex-row-reverse"
   } items-center pb-16`;
   const image = `w-full md:w-5/12 flex z-20 justify-center transform md:hover:scale-125 transition duration-700 ${
-    isEven ? "md:pr" : "md:pl"
-  }-3`;
+    isEven ? "md:pr-2" : "md:pl-2"
+  }`;
   const card = `w-full md:w-7/12 z-10 flex flex-col shadow-md rounded-xl px-4 py-4 lg:px-6 lg:py-6 transition duration-700 ease-in-out transform md:hover:-translate-y-4 md:hover:shadow-2xl`;
 
   return (
@@ -40,12 +39,12 @@ export default function CardProject({ id, data }) {
           {data.description}
         </p>
         <div className="cursor-pointer pt-2 pb-5 md:pt-3 md:pb-10">
-          <Link
-            to="/"
+          <a
+            href="https://github.com/mgibrann"
             className="text-light-grey font-semibold link-project pb-1 text-base md:text-lg lg:text-xl"
           >
             View Project
-          </Link>
+          </a>
         </div>
         <div
           className={`flex transition duration-700 filter ${
