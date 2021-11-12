@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Fade from "../../utils/Fade";
 
-const CardProject = ({ id, data }) => {
+export default function CardProject({ id, data }) {
   const [isHover, setIsHover] = useState(false);
   const isEven = id % 2 === 0;
   const layout = `flex flex-col md:flex-row ${
@@ -13,7 +14,13 @@ const CardProject = ({ id, data }) => {
   const card = `w-full md:w-7/12 z-10 flex flex-col shadow-md rounded-xl px-4 py-4 lg:px-6 lg:py-6 transition duration-700 ease-in-out transform md:hover:-translate-y-4 md:hover:shadow-2xl`;
 
   return (
-    <section className={layout}>
+    <Fade
+      type="section"
+      ml={isEven && -100}
+      mb={!isEven && -100}
+      delay={id + 1 * 500}
+      className={layout}
+    >
       <div className={image}>
         <img
           src="https://www.halo-lab.com/images/common/projects_section/preview-1-eb034d9b-960.webp"
@@ -59,8 +66,6 @@ const CardProject = ({ id, data }) => {
           ))}
         </div>
       </div>
-    </section>
+    </Fade>
   );
-};
-
-export default CardProject;
+}

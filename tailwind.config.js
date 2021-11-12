@@ -15,6 +15,9 @@ module.exports = {
           dark: "#ff16d1",
         },
       },
+      width: {
+        "2px": "2px",
+      },
     },
   },
   variants: {

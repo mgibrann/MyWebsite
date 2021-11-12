@@ -6,16 +6,16 @@ import Loading from "./components/UI/Loading";
 
 const Home = React.lazy(() => import("./pages/Home"));
 const Blog = React.lazy(() => import("./pages/Blog"));
-const Project = React.lazy(() => import("./pages/Project"));
+const Projects = React.lazy(() => import("./pages/Projects"));
 const About = React.lazy(() => import("./pages/About"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 
-const App = () => {
+export default function App() {
   const [isLoading, setIsloading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
       setIsloading((prev) => !prev);
-    }, 3000);
+    }, 2000);
   }, []);
   return (
     <BrowserRouter>
@@ -30,7 +30,7 @@ const App = () => {
       )}
     </BrowserRouter>
   );
-};
+}
 
 const Main = () => {
   return (
@@ -39,10 +39,10 @@ const Main = () => {
         <Home />
       </Route>
       <Route path="/blog">
-        <NotFound />
+        <Blog />
       </Route>
-      <Route path="/project">
-        <Project />
+      <Route path="/projects">
+        <Projects />
       </Route>
       <Route path="/about">
         <About />
@@ -53,5 +53,3 @@ const Main = () => {
     </Switch>
   );
 };
-
-export default App;

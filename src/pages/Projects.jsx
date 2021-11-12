@@ -1,7 +1,7 @@
-import CardProject from "../components/UI/CardProject";
+import { CardProject } from "../components";
 import { Tailwind, ReactIcon, JavaScript } from "../assets";
 
-const Projects = () => {
+export default function Projects() {
   const allProject = [
     {
       id: "React",
@@ -45,6 +45,4 @@ const Projects = () => {
       ))}
     </main>
   );
-};
-
-export default Projects;
+}

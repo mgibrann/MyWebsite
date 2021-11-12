@@ -1,11 +1,17 @@
-import AnimationLottie from "../components/UI/AnimationLottie";
+import { AnimationLottie } from "../components";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
-const NotFound = () => {
+export default function NotFound() {
+  const { width } = useWindowDimensions();
   return (
-    <main className="m-auto padding pb-5 md:pb-0 md:h-9/12 md:w-10/12">
-      <AnimationLottie type="404" />
+    <main className="flex flex-grow padding justify-center items-center pb-5 md:pb-0 ">
+      <div className="">
+        <AnimationLottie
+          type="404"
+          width={width >= 768 ? "75%" : "100%"}
+          height={width >= 768 ? "75%" : "100%"}
+        />
+      </div>
     </main>
   );
-};
-
-export default NotFound;
+}

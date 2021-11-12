@@ -1,157 +1,66 @@
-import CardJourney from "../components/UI/CardJourney";
-import { Photo, JavaScript, Github, Tailwind, ReactIcon } from "../assets";
+import { Photo } from "../assets";
+import {
+  CardJourney,
+  CardSkill,
+  CardContact,
+  CardCertificate,
+  SectionAbout,
+} from "../components";
+import { CERTIFICATES, CONTACTS, JOURNEYS, SKILLS } from "../utils/data";
 
-const About = () => {
-  const SKILLS = [
-    {
-      id: "Javascript",
-      img: JavaScript,
-    },
-    {
-      id: "React",
-      img: ReactIcon,
-    },
-    {
-      id: "Tailwind",
-      img: Tailwind,
-    },
-    {
-      id: "Github",
-      img: Github,
-    },
-  ];
-  const JOURNEYS = [
-    {
-      date: "Jan 2021 - Apr 2021",
-      position: "Mobile Developer - PT. Fana Baka Teknologi",
-      description:
-        "Build financial record app using React Native and publish to Google Play Store. Slicing design prototype company app.",
-    },
-    {
-      date: "2018 - Expected 2022",
-      position: "Computer Engineering - Diponegoro University",
-      description: "Becoming Assitant Lab",
-    },
-    {
-      date: "2020 - 2021",
-      position:
-        "head of division social - Computer Engineering Student Association",
-      description:
-        "Overseeing the Fundraising work program for victims of natural disasters and orphanage visits.",
-    },
-    {
-      date: "2019 - 2020",
-      position: "Staff Social - Computer Engineering Student Association",
-      description:
-        "Responsible for the Fundraising work program for victims of natural disasters .",
-    },
-    {
-      date: "2019 - 2020",
-      position: "Staff - Computer Engineering Student spiritual Association",
-      description:
-        "Mandated as the person in charge of the jacket-making work program.",
-    },
-  ];
-  const CERTIFICATES = [
-    {
-      from: "Udemy",
-      title: "The Complete React Native + Hooks Course",
-      file: "https://drive.google.com/file/d/1l_uhI8g7YUuMx2Ar08aq7Uzhi7mD0-uC/view?usp=sharing",
-    },
-    {
-      from: "Udemy",
-      title: "Full-Stack React Native Developer",
-      file: "https://drive.google.com/file/d/1l_uhI8g7YUuMx2Ar08aq7Uzhi7mD0-uC/view?usp=sharing",
-    },
-    {
-      from: "Digital Talent Scholarship",
-      title: "HTML, CSS, JavaScript Program Online Academy 2020",
-      file: "https://drive.google.com/file/d/1l_uhI8g7YUuMx2Ar08aq7Uzhi7mD0-uC/view?usp=sharing",
-    },
-    {
-      from: "Dicoding",
-      title: "Learn basic web programming",
-      file: "https://drive.google.com/file/d/1l_uhI8g7YUuMx2Ar08aq7Uzhi7mD0-uC/view?usp=sharing",
-    },
-  ];
-
+export default function About() {
   return (
     <main className="flex-grow padding">
-      <section className="pt-4 pb-4">
-        <p className="pb-2 text-xl md:text-2xl lg:text-4xl text-light-blue font-bold text-center border-b border-gray-300">
-          About Me
-        </p>
-        <div className="flex flex-col items-center pt-4">
-          <img
-            src={Photo}
-            alt="gibran"
-            className="h-25 w-24 bg-light-blue rounded-full shadow-sm transform duration-700 hover:scale-150 hover:shadow-2xl cursor-pointer hover:z-40"
-          />
-          <p className="text-base md:text-xl lg:text-3xl text-light-grey font-semibold mt-2 mb-3 transform duration-300 hover:text-light-blue">
-            Muhamad Taopik Gibran
-          </p>
-          <p className="text-sm md:text-lg lg:text-xl text-justify text-light-grey font-medium">
+      <SectionAbout type="section" title="About Me" ml={-200} delay={100}>
+        <div className="flex flex-col md:flex-row items-center pt-2 md:pt-0">
+          <div className="flex flex-col justify-end items-center md:w-5/12 md:py-2">
+            <img
+              src={Photo}
+              alt="gibran"
+              className="w-16 h-auto md:w-20 lg:w-20 bg-light-blue rounded-full shadow-sm transform duration-700 hover:scale-150 hover:shadow-2xl cursor-pointer hover:z-40"
+            />
+            <p className="text-base md:text-lg lg:text-2xl text-light-grey font-medium">
+              Muhamad Taopik Gibran
+            </p>
+            <div className="flex lg:space-x-4 pb-2 md:pb-0">
+              {CONTACTS.map((item) => (
+                <CardContact
+                  key={item.id}
+                  contact={item}
+                  className="h-7 md:h-8 lg:h-9"
+                />
+              ))}
+            </div>
+          </div>
+          <p className="md:w-7/12 text-sm md:text-base lg:text-xl text-justify text-light-grey">
             A software developer who has a high interest in website and mobile
             development. Usually use JavaScript language and experience using
             Reactjs, React Native, Next js, and Tailwindcss. Has a dream to
             become a great developer. Likes to learn new stuff.
           </p>
         </div>
-      </section>
-      <section className="pt-4 pb-4 ">
-        <p className="pb-3 text-xl md:text-2xl lg:text-4xl text-light-blue font-bold text-center border-b border-gray-300">
-          Skills
-        </p>
-        <div className="flex justify-evenly pt-5">
+      </SectionAbout>
+      <SectionAbout type="section" title="Skills" mr={-200} delay={300}>
+        <div className="flex pt-5 space-x-2 justify-evenly flex-wrap">
           {SKILLS.map((skill) => (
-            <span
-              key={skill.id}
-              className="flex flex-col items-center text-light-grey font-medium transform duration-500 hover:-translate-y-7"
-            >
-              <span className="w-6 h-6 md:w-7 md:h-7 lg:w-9 lg:h-9">
-                <img src={skill.img} alt={skill.id} />
-              </span>
-              {skill.id}
-            </span>
+            <CardSkill key={skill.id} id={skill.id} img={skill.img} />
           ))}
         </div>
-      </section>
-      <section className="py-2">
-        <p className="pb-2 text-xl md:text-2xl lg:text-4xl text-light-blue font-bold text-center border-b border-gray-300">
-          Journey
-        </p>
+      </SectionAbout>
+      <SectionAbout type="section" title="Journey" ml={-200} delay={600}>
         <div className="pt-2">
           {JOURNEYS.map((journey, index) => (
-            <CardJourney
-              key={index}
-              date={journey.date}
-              position={journey.position}
-              description={journey.description}
-            />
+            <CardJourney key={index} journey={journey} />
           ))}
         </div>
-      </section>
-      <section className="pt-4 pb-4">
-        <p className="pb-3 text-xl md:text-2xl lg:text-4xl text-light-blue font-bold text-center border-b border-gray-300">
-          Certificates
-        </p>
-        {CERTIFICATES.map((certif, index) => (
-          <div className="flex py-1 items-center" key={index}>
-            <div className="bg-light-blue w-4 h-4 rounded-lg absolute" />
-            <p className=" text-light-grey font-semibold text-sm pl-5">
-              {certif.title} -
-              <span
-                className="text-light-blue cursor-pointer transform duration-300 hover:translate-y-5"
-                onClick={() => window.open(certif.file)}
-              >
-                {" " + certif.from}
-              </span>
-            </p>
-          </div>
-        ))}
-      </section>
+      </SectionAbout>
+      <SectionAbout type="section" title="Certificates" ml={-200} delay={900}>
+        <div className="pt-2">
+          {CERTIFICATES.map((certif) => (
+            <CardCertificate key={certif.title} certif={certif} />
+          ))}
+        </div>
+      </SectionAbout>
     </main>
   );
-};
-
-export default About;
+}

@@ -1,9 +1,7 @@
-const Blog = () => {
+export default function Blog() {
   return (
-    <main className="flex flex-grow justify-center items-center text-light-blue text-4xl  font-bold padding">
+    <main className="flex flex-grow justify-center items-center text-light-blue text-3xl  font-bold padding">
       Coming Soon
     </main>
   );
-};
-
-export default Blog;
+}

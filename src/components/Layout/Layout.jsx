@@ -1,8 +1,7 @@
-import { Fragment } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 
-const Layout = (props) => {
+export default function Layout(props) {
   return (
     <>
       <Header />
@@ -10,6 +9,4 @@ const Layout = (props) => {
       <Footer />
     </>
   );
-};
-
-export default Layout;
+}
